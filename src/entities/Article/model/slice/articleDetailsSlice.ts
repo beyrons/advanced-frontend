@@ -1,0 +1,37 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Article } from '../types/article';
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
+import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
+
+
+const initialState: ArticleDetailsSchema = {
+    isLoading: false,
+    error: undefined,
+    data: undefined,
+};
+
+export const articleDetailsSlice = createSlice({      // "защищаем" State он рандомных полей дженериком
+    name: 'articleDetails',
+    initialState,
+    reducers: {},
+
+    extraReducers: (builder) => {
+        builder
+            // pending -- начало выполнения async-action
+            .addCase(fetchArticleById.pending, (state) => {
+                state.error = undefined;    // обнуляем ошибку, если она была
+                state.isLoading = true;     // включаем "крутилку"
+            })
+            .addCase(fetchArticleById.fulfilled, (state, action: PayloadAction<Article>) => {
+                state.isLoading = false;
+                state.data = action.payload;
+            })
+            .addCase(fetchArticleById.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload;
+            });
+    },
+});
+
+export const { actions: articleDetailsActions } = articleDetailsSlice;
+export const { reducer: articleDetailsReducer } = articleDetailsSlice;

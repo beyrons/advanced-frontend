@@ -1,0 +1,21 @@
+.app_gray_theme {
+    --bg-color: #cbcbcb;
+    --inverted-bg-color: #4f4f4f;
+    --primary-color: #3c3c3c;       // заголовки
+    --secondary-color: #bfbfbf;     // обычный текст
+    --inverted-primary-color: #000;
+    --inverted-secondary-color: #009286;
+
+    // skeleton
+    --skeleton-color: #fff;
+    --skeleton-shadow: rgba(0 0 0 / 20%);
+
+    // code
+    --code-bg: #fff;
+
+    // card
+    --card-bg: #949393;
+
+    // listBox
+    --listbox-bg: #949393;
+}

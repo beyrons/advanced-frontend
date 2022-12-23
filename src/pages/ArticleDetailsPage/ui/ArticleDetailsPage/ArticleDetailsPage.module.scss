@@ -1,0 +1,9 @@
+.ArticleDetailsPage {
+    min-height: 100%;
+}
+
+.recommendations {
+    flex-wrap: nowrap;          // отключаем переносы
+    overflow-y: hidden;         // скролл при переполнении (когда не влазить в ширину страницы)
+    overflow-x: auto;
+}

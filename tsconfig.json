@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",           // для асинхронных чанков
+    "target": "esnext",
+    "jsx": "react-jsx",           // из-за "import React from "react";", убрать необходимость импортировать реакт в каждый файл
+    "allowJs": true,
+    "strict": true,               // добавляем строгий режим для TypeScript
+    "moduleResolution": "node",
+    "baseUrl": ".",               // для абсолютного импорта
+    "paths": {
+      "@/*": ["./src/*"]          // все экспорты/импорты будут идти из папки 'src'
+    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    // При абсолютном импорте, типа: "import { Button, ThemeButton } from 'shared/components/Button/Button';"
+    // происходит краш и выскакивает ошибка : "TS2307: Cannot find module 'shared/components/Button/Button' or its corresponding types declarations".
+    // Решение: явно указываем путь к файлам, которые находятся в папке src, чтобы типы подхватывались правильно, т.е. добавляем две строчки:
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ]
+}

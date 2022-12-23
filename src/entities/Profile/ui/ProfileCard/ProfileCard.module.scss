@@ -1,0 +1,14 @@
+.ProfileCard {
+    padding: 20px;
+    border: 2px solid var(--inverted-bg-color);
+}
+
+.loading,
+.error {
+    height: 300px;
+}
+
+.editing {
+    border: 2px solid var(--inverted-primary-color);
+    background: #d5d5d5;
+}

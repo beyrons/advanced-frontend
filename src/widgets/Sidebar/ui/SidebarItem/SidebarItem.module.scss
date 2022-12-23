@@ -1,0 +1,23 @@
+.item {                                     // выравнивание иконки на Sidebar
+    margin-top: 10px;                       // отступы сюда, т.к. это обертка
+    display: flex;
+    align-items: center;
+}
+
+.link {                                     // link navbar on Sidebar
+    margin-left: 10px;                      // отступ от иконки
+    transition: 1s opacity;
+    opacity: 1;
+}
+
+.icon {
+    fill: var(--inverted-primary-color);   // цвет иконки
+}
+
+.collapsed {
+    .link { // оставляем только иконки при сворачивании Sidebar
+        opacity: 0;
+        transition: 0.2s opacity;
+        width: 0;
+    }
+}

@@ -1,0 +1,40 @@
+// корневой scss-файл, точка входа для стилей
+
+@import "reset";
+@import "./variables/global";
+@import "./themes/normal";
+@import "./themes/dark";
+@import "./themes/gray";
+
+.app,
+.app_modal,
+.app_drawer {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+
+.app {
+    background: var(--bg-color);
+    min-height: 100vh;
+}
+
+.content-page {
+    display: flex;
+}
+
+// оформление scrollbar :: https://xhtml.ru/2020/css/css-scrollbars/
+// * -- т.е. во всех блоках приложения scrollbar будет одинаковый
+*::-webkit-scrollbar {
+    width: 15px;                                            /* ширина scrollbar */
+    height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--card-bg);                             /* цвет дорожки */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--inverted-primary-color);        /* цвет плашки */
+    border-radius: 5px;                                     /* закругления плашки */
+    border: 1px solid var(--primary-color);                 /* padding вокруг плашки */
+}

@@ -1,0 +1,15 @@
+.starIcon {
+    cursor: pointer;
+}
+
+.normal {
+    fill: none;    // убираем заливку цвета у звезд
+}
+
+.hovered {
+    fill: var(--primary-color);
+}
+
+.selected {
+    cursor: auto;   // делаем курсор обычным, когда рейтинг выбран
+}
