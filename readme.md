@@ -42,7 +42,7 @@ passw: 123
 
 ### build project
 
-Для разработки проект содержит 2 конфига:  
+Для сборки проект содержит 2 конфига:  
 1. [`Webpack`](./config/build)
 2. [`Vite`](vite.config.ts)
 
